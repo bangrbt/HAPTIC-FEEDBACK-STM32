@@ -1,0 +1,13 @@
+../Drivers/CMSIS/Include/core_cm4.h:1684:22:__NVIC_EnableIRQ	2
+../Core/Src/main.c:22:6:Delay_ms	2
+../Core/Src/main.c:26:6:USART1_Init	1
+../Core/Src/main.c:37:6:UART1_SendString	3
+../Core/Src/main.c:44:6:USART2_Init	1
+../Core/Src/main.c:56:6:UART2_SendString	3
+../Core/Src/main.c:63:6:USART2_IRQHandler	6
+../Core/Src/main.c:83:6:TIM2_Encoder_Init	1
+../Core/Src/main.c:96:6:Motor_Init	1
+../Core/Src/main.c:111:6:Apply_Force_Feedback	5
+../Core/Src/main.c:126:6:TIM4_Timer_Init	1
+../Core/Src/main.c:136:6:TIM4_IRQHandler	2
+../Core/Src/main.c:149:5:main	6
