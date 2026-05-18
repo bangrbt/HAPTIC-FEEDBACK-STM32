@@ -39,6 +39,20 @@ Toàn bộ hệ thống phần mềm (cho cả hai nút mạng Master và Slave)
 
 ---
 
-## 🛠️ Kiến trúc Hệ thống & Sơ đồ Khối
+## 📂 Sơ đồ Thư mục Dự án
+.├── Core│   ├── Inc│   │   ├── stm32f4xx.h         # Thanh ghi định nghĩa bản đồ bộ nhớ MCU│   │   ├── pid.h               # Định nghĩa cấu trúc & tham số PID số rời rạc│   │   ├── oled_ssd1306.h      # Cấu hình I2C và tệp tiêu đề điều khiển màn hình│   │   └── ascii_font.h        # Định nghĩa ma trận bộ mã Font 5x8 tĩnh trong Flash│   └── Src│       ├── main.c              # Vòng lặp nền & Khởi tạo toàn cục hệ thống│       ├── stm32f4xx_it.c      # Trình phục vụ ngắt (ISR TIM4 500Hz & USART2)│       ├── pid.c               # Thuật toán Soft-clamping Anti-windup, EMA Filter│       └── oled_ssd1306.c      # Trình điều khiển OLED SSD1306 cấp thanh ghi với Timeout├── Debug/                      # [Bị bỏ qua bởi .gitignore] Thư mục Build local├── .gitignore                  # Cấu hình bỏ qua các tệp rác khi biên dịch└── README.md                   # Tài liệu hướng dẫn dự án
+---
 
-### 📱 Sơ đồ Kết nối Phần cứng
+## 🚀 Hướng dẫn Cài đặt & Triển khai
+
+### Điều kiện tiên quyết
+* Máy tính cài đặt môi trường phát triển (như **STM32CubeIDE**, **Keil MDK ARM**, hoặc chuỗi công cụ **GNU Arm Embedded Toolchain** biên dịch bằng `Makefile`).
+* Mạch nạp **ST-Link V2** hoặc tương đương.
+* Hai board phát triển vi điều khiển **WeAct STM32F401RCT6**[cite: 170].
+
+### Các bước nạp code và vận hành
+1. **Clone repository về máy local:**
+   ```bash
+   git clone [https://github.com/bangrbt/HAPTIC-FEEDBACK-STM32.git](https://github.com/bangrbt/HAPTIC-FEEDBACK-STM32.git)
+   cd HAPTIC-FEEDBACK-STM32
+Mở dự án bằng IDE của bạn.Cấu hình hằng số định danh trong mã nguồn tùy thuộc vào mạch bạn muốn nạp:  Định nghĩa #define NODE_MASTER để biên dịch mã nguồn cho cụm điều khiển Master.Định nghĩa #define NODE_SLAVE để biên dịch mã nguồn cho cụm chấp hành Slave.Biên dịch hệ thống (Build Project) và tiến hành nạp xuống board mạch thông qua ST-Link.Thực hiện kết nối phần cứng chéo các chân TX/RX giữa hai board MCU để thiết lập kênh truyền thông USART, cấp nguồn 12V tổng và bắt đầu thử nghiệm thực nghiệm.  📈 Kết quả Thực nghiệm & Tiềm năng Ứng dụngVận hành ổn định: Hệ thống đã vận hành thực tế ổn định, đạt độ chính xác bám sai số xác lập cực nhỏ ($\pm 20$ xung trên hành trình dịch chuyển dài hơn 10000 xung).  Trải nghiệm chân thực: Trải nghiệm phản hồi lực (Haptic Rendering) thể hiện rõ nét độ trong suốt (Transparency) khi mô phỏng môi trường "bức tường ảo" với đặc tính không gian pha Lực - Vị trí dốc thẳng đứng cực gắt ($\frac{\Delta F}{\Delta x}$).  Hệ thống lõi này đặt nền móng kỹ thuật vững chắc để mở rộng ứng dụng sang các lĩnh vực mũi nhọn đòi hỏi khắt khe về thời gian thực cứng như:  Y tế: Robot phẫu thuật xâm lấn tối thiểu (Surgical Robotics), tái tạo cảm giác sờ và phân biệt mật độ mô cơ của bệnh nhân cho bác sĩ.  Thao tác từ xa môi trường khắc nghiệt: Robot rà phá bom mìn, bảo trì lõi lò phản ứng hạt nhân hoặc cánh tay không gian trạm vũ trụ.  VR/AR Training Simulators: Hệ thống mô phỏng đào tạo y khoa, giả lập vô-lăng phản hồi lực (Drive-by-wire) cho huấn luyện bay/lái xe.  Công nghiệp 4.0: Hệ thống khuếch đại lực và thu nhỏ vị trí phục vụ dây chuyền lắp ráp vi cơ điện tử, vi mô bán dẫn.  👥 Tác giả Đồ ánDự án nghiên cứu được hoàn thành bởi nhóm sinh viên chuyên ngành Kỹ thuật Robot, Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội (VNU-UET) dưới sự hướng dẫn khoa học sát sao của:  TS. Vũ Quốc Tuấn   KS. Đỗ Đình Minh   Thành viên thực hiện:Lê Anh Tuấn Bằng (MSV: 23020723)   Đỗ Việt Anh (MSV: 23020719)   Kiều Minh Dũng (MSV: 23020729)   Hà Nội, Năm 2026.   
