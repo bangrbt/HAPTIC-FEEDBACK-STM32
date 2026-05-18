@@ -50,19 +50,19 @@ Toàn bộ hệ thống phần mềm (cho cả hai nút mạng Master và Slave)
 │             CỤM MASTER (Haptic Interface)              │     │
 │ 🛠️ MCU: STM32F401RCT6 (Cortex-M4, 84MHz)               │<────┤
 │ 🔹 Mạch Công Suất: Cầu H BTS7960 (43A Max)             │     │
-│ 🔹 Cơ Cấu Chấp Hành: Động cơ DC JGB37-545 + Hall Encoder│     │
+│ 🔹 Cơ Cấu Chấp Hành: Động cơ DC JGB37-545 + Hall Encoder│    │
 └───────────────────────────┬────────────────────────────┘     │
 │                           │Chuẩn USART (115200 bps)          │
 [Khoảng cách từ xa]         │                                  │
 │                           │                                  │
 ┌───────────────────────────▼────────────────────────────┐     │
-│             CỤM SLAVE (Remote Manipulator)             │     │
-│ 🛠️ MCU: STM32F401RCT6 (Cortex-M4, 84MHz)               │<────┘
-│ 🔹 Mạch Công Suất: Cầu H BTS7960 (43A Max)             │
+│             CỤM SLAVE (Remote Manipulator)                   │
+│ 🛠️ MCU: STM32F401RCT6 (Cortex-M4, 84MHz)                │ <─┘
+│ 🔹 Mạch Công Suất: Cầu H BTS7960 (43A Max)              │
 │ 🔹 Cơ Cấu Chấp Hành: Động cơ DC JGB37-545 + Hall Encoder│
-│ 🔹 Cảm Biến Dòng Điện: Module ACS712 (Hiệu ứng Hall 5A)│
+│ 🔹 Cảm Biến Dòng Điện: Module ACS712 (Hiệu ứng Hall 5A) │
 │ 🔹 Giao Diện HMI: Màn Hình OLED SSD1306 (I2C 100kHz)    │
-│ 🔹 Thiết Bị Cảnh Báo: Active Buzzer (Điều chế tần số)  │
+│ 🔹 Thiết Bị Cảnh Báo: Active Buzzer (Điều chế tần số)   │
 └────────────────────────────────────────────────────────┘
 ```
 
@@ -132,8 +132,8 @@ Dự án nghiên cứu được hoàn thành bởi nhóm sinh viên chuyên ngà
 * **KS. Đỗ Đình Minh**
 
 **Thành viên thực hiện:**
-* Lê Anh Tuấn Bằng (MSV: 23020723)
-* Đỗ Việt Anh (MSV: 23020719)
-* Kiều Minh Dũng (MSV: 23020729)
+* Lê Anh Tuấn Bằng (Lead)
+* Đỗ Việt Anh 
+* Kiều Minh Dũng 
 
 **Hà Nội, Năm 2026.**
