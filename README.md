@@ -127,10 +127,6 @@ Hệ thống lõi này đặt nền móng kỹ thuật vững chắc để mở 
 
 ## 👥 Tác giả Đồ án
 
-Dự án nghiên cứu được hoàn thành bởi nhóm sinh viên chuyên ngành Kỹ thuật Robot, Trường Đại học Công nghệ - Đại học Quốc gia Hà Nội (VNU-UET) dưới sự hướng dẫn khoa học sát sao của:
-* **TS. Vũ Quốc Tuấn**
-* **KS. Đỗ Đình Minh**
-
 **Thành viên thực hiện:**
 * Lê Anh Tuấn Bằng (Lead)
 * Đỗ Việt Anh 
